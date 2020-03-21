@@ -117,6 +117,16 @@ resource "azurerm_linux_virtual_machine" "vm-folding" {
   }
 }
 
+resource "azurerm_virtual_machine_extension" "vm-folding-extension" {
+  count                      = var.fahvmgpuenabled ? var.fahvmcount : 0
+  name                       = "NvidiaGpuDriverLinux"
+  virtual_machine_id         = azurerm_linux_virtual_machine.vm-folding.*.id[count.index]
+  publisher                  = "Microsoft.HpcCompute"
+  type                       = "NvidiaGpuDriverLinux"
+  type_handler_version       = "1.2"
+  auto_upgrade_minor_version = true
+}
+
 output "web-access" {
     value = [azurerm_public_ip.pip-vm-folding.*.fqdn]
     description = "Website to see your on Folding on Azure"

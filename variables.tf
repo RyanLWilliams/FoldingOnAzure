@@ -55,3 +55,9 @@ variable "fahvmpassword" {
     type = string
     description = "Password for admin user"
 }
+
+variable "fahvmgpuenabled" {
+  type = bool
+  description = "Deploy a GPU enabled virtul machine"
+  default = false
+}
