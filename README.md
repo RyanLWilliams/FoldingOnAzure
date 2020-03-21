@@ -24,10 +24,10 @@ Terraform to setup Folding@Home instances in Azure.
 
 1. Clone the repo to your machine.
 1. Edit the terraform.tfvars file.
-1. Edit the cloud-init.yaml file to conigure the folding at home client.
+1. Edit the cloud-init.yaml file to configure the folding at home client.
 1. Run terraform init
 1. Run terraform apply
-1. Terraform will output the hostnames for folding in Azure. These can be accessed at http://hostname:7396
+1. Terraform will output the hostname for the folding VMs in Azure. These can be accessed at http://hostname:7396
 
 ## Edit the terraform.tfvars file
 
@@ -47,7 +47,7 @@ Open the file with your editor of choice (VS Code recommended) Fill in your valu
 1. **User:** This can be any unique identifier that you want to use to track your work contribution. [Read more about users](https://foldingathome.org/support/faq/stats-teams-usernames/).
 1. **Team:** The team that you want to associate your work with. My Team is 246715. [Read more about teams](https://foldingathome.org/support/faq/stats-teams-usernames/).
 1. **Passkey:** A unique identifier that ties your contributions directly to you (not just those with your username). [Read more about passkeys](https://foldingathome.org/support/faq/points/passkey/).
-1. **GPU:** Set value to use if using an nvidia based Azure VM. Recommended SKU is the NCv3-series, otherwise use the F2-series.
-1. **Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser. To find out what your publc IP is use this handy little [website](https://www.whatismyip.com/).
+1. **GPU:** Set value to true if using an nvidia based Azure VM. Recommended SKU is the NCv3-series, otherwise use the F2-series.
+1. **Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser. To find out what your public IP is use this handy little [website](https://www.whatismyip.com/).
 1. **Web-Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser.
 1. **Password:** Set A Password to remotely manage the FAHClient with FAHControl. Download from [here](https://foldingathome.org/alternative-downloads/).
