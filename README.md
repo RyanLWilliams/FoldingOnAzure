@@ -45,7 +45,7 @@ Open the file with your editor of choice (VS Code recommended) Fill in your valu
 ## Updating the cloud-init.yaml
 
 1. **User:** This can be any unique identifier that you want to use to track your work contribution. [Read more about users](https://foldingathome.org/support/faq/stats-teams-usernames/).
-1. **Team:** The team that you want to associate your work with. My Team is 246715. [Read more about teams](https://foldingathome.org/support/faq/stats-teams-usernames/).
+1. **Team:** The team that you want to associate your work with. My Team is 248825. [Read more about teams](https://foldingathome.org/support/faq/stats-teams-usernames/).
 1. **Passkey:** A unique identifier that ties your contributions directly to you (not just those with your username). [Read more about passkeys](https://foldingathome.org/support/faq/points/passkey/).
 1. **GPU:** Set value to true if using an nvidia based Azure VM. Recommended SKU is the NCv3-series, otherwise use the F2-series.
 1. **Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser. To find out what your public IP is use this handy little [website](https://www.whatismyip.com/).

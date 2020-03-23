@@ -4,7 +4,7 @@ write_files:
     content: |
       <config>
         <user value=''/>
-        <team value='246715'/>
+        <team value='248825'/>
         <passkey value=''/>
         <power value='full'/>
         <gpu value='false'/>
