@@ -36,7 +36,7 @@ variable "fahvmcount" {
 
 variable "fahvmname" {
     type = string
-    description = "Name Prefox for Virtual Machine resources"
+    description = "Name Prefix for Virtual Machine resources"
     default = "fah"
 }
 

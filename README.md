@@ -33,21 +33,33 @@ Terraform to setup Folding@Home instances in Azure.
 
 Open the file with your editor of choice (VS Code recommended) Fill in your values in between the quotations.
 
-    tenant_id = "" //Your Azure Tenant ID
-    subscription_id = "" //Your Azure Subscription ID
-    client_id = "" //Your Service Principal Client ID
-    client_secret = "" //Your Service Principal Sercret
-    location = "" //Azure Region to deploy to. I chose West Europe
-    clientip = "" //Your Public IP you will be viewing your folding from
-    fahvmusername = "" //Username used to login to the linux VM
-    fahvmpassword = "" //Password used to login to the linux VM
+1. **tenant_id:** Your Azure Tenant ID
+1. **subscription_id:** Your Azure Subscription ID
+1. **client_id:** Your Service Principal Client ID
+1. **client_secret:** Your Service Principal Secret
+1. **location:** Azure Region to deploy to. I chose West Europe
+1. **clientip:** Your Public IP you will be viewing your folding from
+1. **fahvmusername:** Username used to login to the linux VM
+1. **fahvmpassword:** Password used to login to the linux VM
 
 ## Updating the cloud-init.yaml
 
 1. **User:** This can be any unique identifier that you want to use to track your work contribution. [Read more about users](https://foldingathome.org/support/faq/stats-teams-usernames/).
 1. **Team:** The team that you want to associate your work with. My Team is 248825. [Read more about teams](https://foldingathome.org/support/faq/stats-teams-usernames/).
 1. **Passkey:** A unique identifier that ties your contributions directly to you (not just those with your username). [Read more about passkeys](https://foldingathome.org/support/faq/points/passkey/).
-1. **GPU:** Set value to true if using an nvidia based Azure VM. Recommended SKU is the NCv3-series, otherwise use the F2-series.
 1. **Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser. To find out what your public IP is use this handy little [website](https://www.whatismyip.com/).
 1. **Web-Allow:** Replace x.x.x.x with your public IP to be able to view your host with a web browser.
 1. **Password:** Set A Password to remotely manage the FAHClient with FAHControl. Download from [here](https://foldingathome.org/alternative-downloads/).
+
+## Advanced Options
+
+There are several more advanced options that can be changed, there are as follows.
+
+In the terraform.tfvars file add the lines
+1. **fahvmcount:** Then set to the number of VMs you would like to build e.g. 3
+1. **fahvmname:** To change the Prefix of the Virtual Machine name.
+1. **fahvmsize:**  If you would like to change the VM size from the default Standard_F4s_v2 e.g Standard_D2s_v2. I would not recommend the B-series VMs.
+1. **fahvmgpuenabled:** Set this value to true if using an Nvidia based VM such as Standard_NC12s_v3. Currently the NVv4 series will fail to deploy as it is an AMD based GPU.
+
+In the cloud-init-yaml file
+1. **GPU:** Set value to true if using an Nvidia based Azure VM. Recommended SKU is the NCv3-series. Currently the NVv4 series will fail to deploy as it is an AMD based GPU.
